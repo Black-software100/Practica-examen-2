@@ -1,0 +1,27 @@
+nav{
+
+    padding-right: 100%;
+}
+
+.contenedor div{
+    float: right;
+}
+.nva{
+    background: chocolate;
+    width: 75%;
+}
+.nabar{
+    width: 25%;
+    margin: auto;
+    height: 890px;
+    overflow: auto;
+}
+.card{
+margin:0;
+padding-left: 100%;
+}
+ul{
+    margin: auto;
+    margin-right: 400px;
+    list-style: none;
+}
