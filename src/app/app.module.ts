@@ -8,10 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { PHPComponent } from './php/php.component';
 import { JSComponent } from './js/js.component';
 import { ANDROIDComponent } from './android/android.component';
-import { FirestoreComponent } from './android/firestore/firestore.component';
 import { SqliteComponent } from './android/sqlite/sqlite.component';
-import { ServicesComponent } from './android/services/services.component';
 import { FirestoreDatabaseComponent } from './android/firestore-database/firestore-database.component';
+import { WebSevicesComponent } from './android/web-sevices/web-sevices.component';
+import { FirebaseAuthComponent } from './android/firebase-auth/firebase-auth.component';
+import { SqliteAuthComponent } from './android/sqlite-auth/sqlite-auth.component';
+import { WebServicesAuthComponent } from './android/web-services-auth/web-services-auth.component';
+import { WebServicesRecycleComponent } from './android/web-services-recycle/web-services-recycle.component';
+import { WebSqliteRecycleComponent } from './android/web-sqlite-recycle/web-sqlite-recycle.component';
+import { FirestoreRecycleComponent } from './android/firestore-recycle/firestore-recycle.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +26,15 @@ import { FirestoreDatabaseComponent } from './android/firestore-database/firesto
     PHPComponent,
     JSComponent,
     ANDROIDComponent,
-    FirestoreComponent,
     SqliteComponent,
-    ServicesComponent,
-    FirestoreDatabaseComponent
+    FirestoreDatabaseComponent,
+    WebSevicesComponent,
+    FirebaseAuthComponent,
+    SqliteAuthComponent,
+    WebServicesAuthComponent,
+    WebServicesRecycleComponent,
+    WebSqliteRecycleComponent,
+    FirestoreRecycleComponent
   ],
   imports: [
     BrowserModule,
