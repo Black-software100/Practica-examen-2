@@ -1,0 +1,70 @@
+nav{
+
+    padding-right: 100%;
+}
+
+/* */
+
+.contenedor div{
+    float: left;
+}
+
+/* */
+
+.nva{
+    background: chocolate;
+    width: 85%;
+    margin: auto;
+    height: 880px;
+    overflow: auto;
+}
+/* configuracion de los navbar lateral */
+
+.nabar{
+    width: 15%;
+    margin: auto;
+    height: 880px;
+    overflow: auto;
+    background: rgb(250, 245, 245);
+}
+
+/* configuraciones a la etiqueta ul */
+
+ul{
+    list-style: none;
+}
+
+/* configuraciones a la etiqueta a*/
+
+a{
+    text-decoration: none;
+    
+}
+
+.links{
+    color: black;
+}
+.links:hover{
+    background: aqua;
+}
+
+/* color de los iconos */
+
+.bi-chat-square-text{
+    color: rgb(255, 0, 0);
+}
+.bi-database{
+    color: gray;
+}
+.bi-list-task{
+    color: rgb(0, 206, 0);
+}
+.bi-person{
+    color: blue;
+}
+.bi-window{
+    color: brown;
+}
+.bi-gear{
+    color: cadetblue;
+}

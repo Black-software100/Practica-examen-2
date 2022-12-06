@@ -38,9 +38,12 @@ ul{
 
 a{
     text-decoration: none;
-    color: black;
+    
 }
 
+.links{
+    color: black;
+}
 .links:hover{
     background: aqua;
 }
