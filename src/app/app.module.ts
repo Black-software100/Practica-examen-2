@@ -17,7 +17,8 @@ import { WebServicesAuthComponent } from './android/web-services-auth/web-servic
 import { WebServicesRecycleComponent } from './android/web-services-recycle/web-services-recycle.component';
 import { WebSqliteRecycleComponent } from './android/web-sqlite-recycle/web-sqlite-recycle.component';
 import { FirestoreRecycleComponent } from './android/firestore-recycle/firestore-recycle.component';
-
+import {ClipboardModule} from '@angular/cdk/clipboard';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,11 +35,15 @@ import { FirestoreRecycleComponent } from './android/firestore-recycle/firestore
     WebServicesAuthComponent,
     WebServicesRecycleComponent,
     WebSqliteRecycleComponent,
-    FirestoreRecycleComponent
+    FirestoreRecycleComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ClipboardModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,8 +12,8 @@ nav{
 /* */
 
 .nva{
-    background: chocolate;
-    width: 85%;
+ 
+    width: 90%;
     margin: auto;
     height: 880px;
     overflow: auto;
@@ -21,7 +21,7 @@ nav{
 /* configuracion de los navbar lateral */
 
 .nabar{
-    width: 15%;
+    width: 10%;
     margin: auto;
     height: 880px;
     overflow: auto;
@@ -67,4 +67,40 @@ a{
 }
 .bi-gear{
     color: cadetblue;
+}
+
+
+/**/
+.codigo{
+    margin-left: 30%;
+}
+.text{
+    background: rgb(151, 226, 226);
+    width: 600%;
+    height: 700%;
+}
+.btn{
+    margin-left: 430%;
+}
+
+
+/**/
+@media (max-width: 1070px) {
+
+    .nva{
+        width: 85%;
+    }
+
+    .nabar{
+        width: 15%;
+    }
+}
+@media (max-width: 990px) {
+    .nva{
+        width: 65%;
+    }
+
+    .nabar{
+        width: 35%;
+    }
 }
