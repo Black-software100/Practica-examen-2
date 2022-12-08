@@ -15,10 +15,13 @@ import { FirebaseAuthComponent } from './android/firebase-auth/firebase-auth.com
 import { SqliteAuthComponent } from './android/sqlite-auth/sqlite-auth.component';
 import { WebServicesAuthComponent } from './android/web-services-auth/web-services-auth.component';
 import { WebServicesRecycleComponent } from './android/web-services-recycle/web-services-recycle.component';
-import { WebSqliteRecycleComponent } from './android/web-sqlite-recycle/web-sqlite-recycle.component';
+
 import { FirestoreRecycleComponent } from './android/firestore-recycle/firestore-recycle.component';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { SqliteRecycleComponent } from './sqlite-recycle/sqlite-recycle.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +37,10 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     SqliteAuthComponent,
     WebServicesAuthComponent,
     WebServicesRecycleComponent,
-    WebSqliteRecycleComponent,
     FirestoreRecycleComponent,
+    SqliteRecycleComponent,
+
+
 
   ],
   imports: [
