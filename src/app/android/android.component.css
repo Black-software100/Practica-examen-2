@@ -85,7 +85,7 @@ a{
         width: 15%;
     }
 }
-@media (max-width: 990px) {
+@media (max-width: 900px) {
     .nva{
         width: 65%;
     }
@@ -93,4 +93,40 @@ a{
     .nabar{
         width: 35%;
     }
+}
+@media (max-width:896px) {
+    .nva{
+        width: 75%;
+    }
+
+    .nabar{
+        width: 25%;
+    }
+}
+@media (max-width:590px) {
+    .nva{
+        width: 70%;
+    }
+
+    .nabar{
+        width: 30%;
+    } 
+}
+@media (max-width:414px) {
+    .nva{
+        width: 65%;
+    }
+
+    .nabar{
+        width: 35%;
+    } 
+}
+@media (max-width:375px) {
+    .nva{
+        width: 67%;
+    }
+
+    .nabar{
+        width: 33%;
+    } 
 }
