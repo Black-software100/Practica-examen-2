@@ -39,8 +39,8 @@ const routes: Routes = [
   {path:"Android/WebService-Auth",component:WebServicesAuthComponent},
   {path:"Android/WebService-Recycle",component:WebServicesRecycleComponent},
 //
-  {path:"",component:DialogComponent},
-  {path:"",component:ProgresDialogComponent}
+  {path:"Android/Dialog",component:DialogComponent},
+  {path:"Android/ProgresDialog",component:ProgresDialogComponent}
 
   
 //
