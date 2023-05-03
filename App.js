@@ -1,24 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import {  Text, View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import CarrosDiponibles from './screens/CarrroDisponibles.js';
-import RentaCarros from './screens/RentaCarros.js';
+import RegistrarUsuario from './screens/RegistrarUsuario.js';
 import styles from './css/style.js';
 import { useState } from 'react';
 import { TextInput,Button } from 'react-native-paper';
-
-
+import {Usuarios} from './screens/RegistrarUsuario.js'
+import Home from './screens/HomeScreen.js';
 const Stack = createNativeStackNavigator();
-const BottomTab = createBottomTabNavigator();
 
 
-let users = [
-  {username:'juant',name: 'juan',password:12345,rol:"1"},
-  {username:'estebani',name: 'esteban',password:'hola',rol:"2"},
-  {username:'leonidas',name: 'drago',password:"delta",rol:"3"}
-]
+
 
 function Login(){
 
@@ -27,7 +20,7 @@ function Login(){
   const [password, setPassword] =useState('');
   const [error, setError] =useState('');
 
-  let finder =  users.find(user => user.username == username && user.password == password);
+  let finder =  Usuarios.find(user => user.user == username && user.password == password);
 
   function handleLogin (){
     if(finder != undefined){
@@ -35,7 +28,11 @@ function Login(){
     }else{
       setError('Usuario o contraseña incorrecta')
     }
-  } 
+  }
+
+  function handleUsuario(){
+    navigation.navigate('Usuario');
+  }
 
   return(
     <View style={styles.container}>
@@ -55,6 +52,7 @@ function Login(){
       onChangeText={password => setPassword(password)}
       secureTextEntry/>
       {error ? <Text style={styles.error}>{error}</Text>:null}
+      <Button onPress={handleUsuario}>Registrar usuario</Button>
       <Button mode="contained" style={styles.button} onPress={handleLogin}>
         Ingresar
       </Button>
@@ -63,40 +61,22 @@ function Login(){
 }
 
 
-function Screen(){
-  return(
-    <View>
 
-    </View>
-  )
-}
 
-function StackNavigator(){
-
-  return(
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login}/>
-      <Stack.Screen name="Home" component={Screen}/>
-    </Stack.Navigator>
-  )
-
-}
 
 
 function App() {
   return (
     <NavigationContainer>
-      <BottomTab.Navigator>
-
-        <BottomTab.Screen name="Usuario" component={StackNavigator} options={{headerShown:false}}/>
-
-        <BottomTab.Screen name='Carros Disponible' component={CarrosDiponibles}/>
-
-        <BottomTab.Screen name="Renta Carro" component={RentaCarros}/>
-
-      </BottomTab.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Home" component={Home}/>
+        <Stack.Screen name="Usuario" component={RegistrarUsuario}/>
+      </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }
+
+
 
 export default App;
