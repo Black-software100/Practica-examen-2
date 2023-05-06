@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Usuarios } from "./RegistrarUsuario";
 import style from "../css/style.js"
 
-let carrosRentado = []
+export const  carrosRentado = []
 
 
 export default function RentaCarros(){
