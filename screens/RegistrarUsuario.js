@@ -15,28 +15,34 @@ export default function Usuario(){
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     function RegistroUsuario (){
-      debugger
+      
       const namePatter = /^[A-Z\sa-z\s]+$/
       const passwordPatter = /^[A-Za-z0-9]+$/
       let validacionName = namePatter.test(name)
       let validacionPassword = passwordPatter.test(password)
 
       if(!validacionName){
-        setError('El usuario solamente se permite letras')
+        setError('solo  permite letras')
       }else if(!validacionPassword){
-        setError('La contraseña solo permite numeros y letras')
+        setError('solo permite numeros y letras')
       }else{
-        let usuario = {
-          name: name,
-          user: user,
-          password: password
+        if(Usuarios.find(usuario => usuario.user == user) == undefined){
+          let usuario = {
+            name: name,
+            user: user,
+            password: password
+          }
+  
+          Usuarios.push(usuario)
+          setName("")
+          setPassword("")
+          setUser("")
+          console.log(Usuarios)
+          //navigation.navigate('Login');
+        }else{
+          setError('El usuario ya existe')
         }
 
-        Usuarios.push(usuario)
-        setName("")
-        setPassword("")
-        setUser("")
-        console.log(Usuarios)
       }
     }
 
@@ -45,7 +51,7 @@ export default function Usuario(){
       <View style={style.container}>
         <Text>Ingresar usuario</Text>
         <TextInput
-          label = "Ingresar nombre complecto"
+          label = "Ingresar nombre completo"
           mode='outlined'
           onChangeText={name => setName(name)}
           value={name}
@@ -61,9 +67,10 @@ export default function Usuario(){
           mode = "outlined"
           onChangeText={password => setPassword(password)}
           value={password}
+          secureTextEntry
         />
         {error ? <Text style={style.error}>{error}</Text>: null}
-        <Button style={style.button} mode='elevated' onPress={RegistroUsuario}>
+        <Button style={style.button} mode='contained' onPress={RegistroUsuario}>
           Registrar Usuario
         </Button>
       </View>

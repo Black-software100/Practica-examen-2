@@ -63,6 +63,11 @@ export default function carrosDiponibles(){
 
             if(carroEncontrado){
                 setMarca(carroEncontrado.marca)
+                if(carroEncontrado.disponible){
+                    setMensaje("El carro esta disponible")
+                }else{
+                    setError("El carro no esta Disponible")
+                }
             }else{
                 setError("No se encontror el carro")
             }
@@ -83,7 +88,7 @@ export default function carrosDiponibles(){
         <View style={style.container}>
             <Text>Agregar Carro</Text>
             <TextInput
-                label="Ingrese Id del Carro"
+                label="Ingrese placa del Carro"
                 mode="outlined"
                 onChangeText={id => setId(id)}
                 value={id}

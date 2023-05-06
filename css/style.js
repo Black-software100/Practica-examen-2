@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
         color:"green"
     },
     button:{
-        marginTop:10
+        marginTop:10,
+        backgroundColor:"#95D173",
     },
     check:{
         display: "inline"

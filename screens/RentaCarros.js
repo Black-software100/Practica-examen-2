@@ -17,7 +17,7 @@ export default function RentaCarros(){
   const [error, setError] = useState('');
   const [checked, setChecked] = React.useState(false);
   const [mensaje, setMensaje] = useState('')
-
+  const [disponible,setDisponible] = useState('');
   function carroRentado (){
     debugger
     let carro = Carros.find(carro => carro.id === placa)
@@ -30,37 +30,32 @@ export default function RentaCarros(){
         if(usuario != undefined){
           if(placa != "" && user  != "" &&  fecha != "") { 
 
-            //if(carro.disponible == true){
-              let autoIncrement = carroRentado.length +1
+            
+               true
 
-          
-              let reservado 
-              if(checked){
-                reservado = false
-              }else{
-                reservado = true
-              }
-
+            if(carro.disponible == true){
 
               const renta ={
-                numeroRenta: autoIncrement,
+                //numeroRenta: autoIncrement,
                 placa: placa,
                 usuario: user,
                 fecha:fecha,
-                checked:checked
+                checked:checked,
+                disponible:true
               }
-
-              carrosRentado.push(renta)
-              console.log(carrosRentado)
-              //Carros.disponible = reservado
+              
+              if(carrosRentado.find(carro => carro.placa == placa) == undefined){
+                carrosRentado.push(renta)
+              }
+              console.log(Carros)
               limpiarDato()
               setMensaje("Renta ingresada correctamente")
-            //}else{
-              //setError("El carro no está disponible")
-            //}
+            }else{
+              setError("El carro no está disponible")
+            }
             
           }else{
-            setError( "No dejar ninguen espacio en blanco")
+            setError( "No dejar ningun espacio en blanco")
           }
         }else{
           setError("El usuario no existe")
@@ -89,10 +84,16 @@ export default function RentaCarros(){
 
       const carroEncontarado = carrosRentado.find(carro => carro.placa == placa)
       console.log(carroEncontarado)
+      console.log(carrosRentado)
       if(carroEncontarado){
         setUser(carroEncontarado.usuario)
         setFecha(carroEncontarado.fecha)
         setChecked(carroEncontarado.checked)
+        if(carroEncontarado.disponible){
+          setDisponible("El no esta disponible")
+        }else{
+          setDisponible("El carro esta disponible")
+        }
       }else{
         setError("No se encontro ningun carro")
       }
@@ -115,20 +116,17 @@ export default function RentaCarros(){
         value={user}
             />
       <TextInput
-        label="Ingrese la fecha del alquler"
+        label="Ingrese la fecha del alquiler"
         mode="outlined"
         onChangeText={fecha => setFecha(fecha)}
         value={fecha}
             />
       <View style={style.check}>
-        <Text>      
-        <Checkbox
-          status={checked ? "checked" : "unchecked"}
-          onPress={() => {setChecked(!checked);}}
-      /> Reservar carro</Text>
+        <Text> Reservar carro</Text>
       </View>
       {error ? <Text style={style.error}>{error}</Text>:null}
       {mensaje ? <Text style={style.success}>{mensaje}</Text>:null}
+      {disponible ? <Text>{disponible}</Text>: null}
       <Button style={style.button} mode="contained" onPress={carroRentado}>
         Guardar Renta
       </Button>
